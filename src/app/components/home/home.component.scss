@@ -1,0 +1,113 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+label.label {
+    font-size: 14px;
+  }
+
+  .count-down-timer {
+    box-shadow: 2px 6px 9px 2px rgb(0 0 0 / 20%);
+    text-align: center;
+    background-color: #313b3f;
+    max-width: 400px;
+    min-width: 80%;
+    margin: 20px auto;
+    color: #d9a74a;
+    border-radius: 6px;
+    padding: 10px;
+    font-family: sans-serif;
+  
+    > p {
+      margin: 5px 0 15px 0;
+    }
+  
+    .wrapper {
+      .description,
+      .times {
+        display: grid;
+        grid-template-columns: repeat(3, calc((100% - 28px) / 3));
+        grid-column-gap: 10px;
+      }
+  
+      .description {
+        > p {
+          margin: 0;
+          font: normal 14px sans-serif;
+        }
+      }
+  
+      .times {
+        p {
+          letter-spacing: 0px;
+          position: relative;
+          margin: 0;
+          font: normal 40px courier, sans-serif;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    .count-down-timer {
+      margin-left: 40px;
+    }
+  }
+  
+  .counter-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    .counter-time {
+      font-size: 2rem;
+    }
+    .button-action {
+      display: flex;
+      gap: 0.5rem;
+      button {
+        padding: 8px;
+      }
+    }
+  }
+
+  .custom-label {
+    color: #d9a74a;
+  }
+
+  .counter-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    .counter-time {
+      font-size: 2rem;
+    }
+    .button-action {
+      display: flex;
+      gap: 0.5rem;
+      button {
+        padding: 10px;
+      }
+    }
+  }
+
+.custom-button{
+  color: #d9a74a;
+}
+
+.pausas {
+  box-shadow: 2px 6px 9px 2px rgb(0 0 0 / 20%);
+  text-align: center;
+  background-color: #fffafa;
+  max-width: 400px;
+  min-width: 80%;
+  margin: 35px auto;
+  color: #000000	;
+  border-radius: 6px;
+  font-family: sans-serif;
+}

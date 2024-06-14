@@ -1,0 +1,50 @@
+<div class="container">
+
+  <div class="count-down-timer">
+      <div class="wrapper">
+        <div class="description">
+          <p>Hours</p>
+          <p>Minutes</p>
+          <p>Seconds</p>
+        </div>
+        <div class="times">
+          <p #hours>{{formatTimeHora()}}</p>
+          <p #minutes>{{formatTimeMinuto()}}</p>
+          <p #seconds>{{formatTimeSegundo()}}</p>
+        </div>
+      </div>
+  </div>
+
+	<div class="counter-content">
+		<div class="button-action">
+      <button [disabled]="!selectButton" (click)="start()" severity="contrast" pButton pRipple class="custom-button">
+        Start
+      </button>
+      <button [disabled]="!selectButtonPause" (click)="pause()" severity="contrast" pButton pRipple class="custom-button">
+        Pause
+      </button>
+      <button [disabled]="!selectButtonDespause" (click)="despausar()" severity="contrast" pButton pRipple class="custom-button">
+        Despause
+      </button>
+      <button [disabled]="!selectButtonEncerrar" (click)="encerrar()" severity="contrast" pButton pRipple class="custom-button">
+        Encerrar
+      </button>
+
+    </div>
+	</div>
+
+  <div class="pausas">
+    <p-scrollPanel [style]="{ width: '100%', height: '250px' }">
+      <div class="">
+        <div *ngFor="let pausa of pausasDTO; let i = index">
+          <p>
+            Pausa {{ i + 1 }} -> {{ pausa.inicioPausa }} as {{ pausa.fimPausa }}
+          </p>
+          <p-divider></p-divider> <!-- Certifique-se que p-divider seja o componente correto -->
+        </div>
+      </div>
+    </p-scrollPanel>
+  </div>
+
+</div>
+

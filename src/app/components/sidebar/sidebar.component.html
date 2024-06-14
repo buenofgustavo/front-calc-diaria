@@ -1,0 +1,47 @@
+<div class="card">
+
+    <p-menubar>
+
+        <ng-template pTemplate="start">
+            <div>
+                <p-sidebar #sidebarRef [(visible)]="sidebarVisible">
+                    <img src="/assets/img/logotdm.png" alt="Logo">
+                  
+
+                    <p-menu [style]="{'width': '100%', 'border': 'none', 'margin': 'auto', 'margin-top': '1rem'}" [model]="items"></p-menu>
+
+                    
+                </p-sidebar>
+            </div>
+            <button 
+                icon="pi pi-bars" pButton pRipple (click)="toggleSidebar()"
+                [style]="{'margin': '0px 10px 0px 0px'}">
+            </button>
+        </ng-template>
+
+        <!-- <ng-template pTemplate="item" let-item let-root="root">
+            <a pRipple class="flex align-items-center p-menuitem-link">
+                <span [class]="item.icon + ' icon-spacing'"></span>
+                <span class="ml-2">{{ item.label }}</span>
+            </a>
+        </ng-template> -->
+
+        <ng-template pTemplate="end">
+            <div class="flex align-items-center gap-2">
+              <div style="display: flex; align-items: center;">
+                <p-avatar [style]="{'margin-right': '10px'}"
+                          label="GB" shape="circle" size="large">
+                </p-avatar>
+                <div style="display: flex; flex-direction: column;">
+                  <span [ngStyle]="{'margin-right': '5px'}" class="text-base">Gustavo Bueno</span>
+                  <span [ngStyle]="{'margin-right': '5px', 'font-size': 'x-small'}" class="text-base">buenofgustavo&commat;gmail.com</span>
+                </div>
+              </div>
+            </div>
+        </ng-template>
+
+    </p-menubar>
+    <div class="content">
+        <router-outlet></router-outlet> <!-- Componentes serão carregados aqui -->
+    </div>
+</div>
