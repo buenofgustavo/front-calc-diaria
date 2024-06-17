@@ -12,12 +12,14 @@ import { BadgeModule } from 'primeng/badge';
 import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 import { MenuModule } from 'primeng/menu';
+import { Router } from 'express';
+import { PanelMenuModule } from 'primeng/panelmenu';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
   imports: [SidebarModule, ButtonModule, NgIf, RippleModule, AvatarModule, StyleClassModule,
-    MenubarModule, BadgeModule, InputTextModule, CommonModule, AvatarGroupModule, MenuModule
+    MenubarModule, BadgeModule, InputTextModule, CommonModule, AvatarGroupModule, MenuModule, PanelMenuModule
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
@@ -39,7 +41,19 @@ export class SidebarComponent{
         {  
           label: 'Home',
           icon: 'pi pi-home',
-          route: ['/home']   
+          routerLink: ['home'],
+          command: () => this.toggleSidebar() 
+        },
+      ]
+    },
+    {
+      label: 'Relatórios',
+      items: [
+        {  
+          label: 'Diárias',
+          icon: 'pi pi-calendar',
+          routerLink: ['relatorio-diarias'],
+          command: () => this.toggleSidebar()
         },
       ]
     },
@@ -49,8 +63,13 @@ export class SidebarComponent{
     {  
       label: '',
       icon: 'pi pi-home',
-      route: ['/home']   
+      routerLink: ['/home']   
     },
   ]
 
+
+
+
+
+  
 }
